@@ -43,7 +43,7 @@ def tryPassword(index, loginAttempt, foundArray, searchPasswords, allPasswords, 
             index += len(pword)
             currentPwordindex = allPasswords.index(pword)
             #searchPasswords = deepCopy(list(set(searchPasswords) | set(allPasswords[currentPwordindex:])))
-            searchPasswords = deepCopy(allPasswords)
+            searchPasswords = deepCopy(allPasswords[pIndex:]) ## not correct!
             next_result = tryPassword(index, loginAttempt, foundArray, searchPasswords, allPasswords, mappedPwords, pIndex)
             match_count += 1
             #print("here! with index ", index, "and found array: ", foundArray, "and search params ", searchPasswords)
@@ -121,6 +121,6 @@ def read_file(fname):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    read_file('input28a.txt')
+    read_file('input28a.txt') # input28a doesn't compile when deepCopy is set to index
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
