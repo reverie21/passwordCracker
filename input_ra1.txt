@@ -1,0 +1,7 @@
+2
+2
+a ab
+aaaaabaaaaab
+4
+a ab c ca
+abcabcabc
